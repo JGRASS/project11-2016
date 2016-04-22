@@ -6,14 +6,37 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PocetniEkran extends JFrame {
-
-	private JPanel contentPane;
+	private JButton btnA1;
+	private JButton btnA2;
+	private JButton btnA3;
+	private JButton btnA4;
+	private JButton btnA;
+	private JButton btnB1;
+	private JButton btnB2;
+	private JButton btnB3;
+	private JButton btnB4;
+	private JButton btnB;
+	private JButton btnC1;
+	private JButton btnC2;
+	private JButton btnC3;
+	private JButton btnC4;
+	private JButton btnC;
+	private JButton btnD1;
+	private JButton btnD2;
+	private JButton btnD3;
+	private JButton btnD4;
+	private JButton btnD;
 	private JTextField textFieldA;
 	private JTextField textFieldB;
 	private JTextField textFieldC;
 	private JTextField textFieldD;
+	private JButton btnPotvrdi;
+	private JButton btnKonacno;
+	private JButton btnVreme;
 	private JTextField textFieldKonacno;
 
 	/**
@@ -38,128 +61,248 @@ public class PocetniEkran extends JFrame {
 	public PocetniEkran() {
 		setResizable(false);
 		setTitle("Asocijacije");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 357);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JButton btnA1 = new JButton("A1");
-		btnA1.setBounds(10, 22, 89, 23);
-		contentPane.add(btnA1);
-		
-		JButton btnA2 = new JButton("A2");
-		btnA2.setBounds(10, 66, 89, 23);
-		contentPane.add(btnA2);
-		
-		JButton btnA3 = new JButton("A3");
-		btnA3.setBounds(10, 107, 89, 23);
-		contentPane.add(btnA3);
-		
-		JButton btnA4 = new JButton("A4");
-		btnA4.setBounds(10, 152, 89, 23);
-		contentPane.add(btnA4);
-		
-		JButton btnA = new JButton("A");
-		btnA.setBounds(10, 196, 89, 23);
-		contentPane.add(btnA);
-		
-		textFieldA = new JTextField();
-		textFieldA.setBounds(10, 197, 86, 20);
-		contentPane.add(textFieldA);
-		textFieldA.setColumns(10);
-		
-		JButton btnB1 = new JButton("B1");
-		btnB1.setBounds(117, 22, 89, 23);
-		contentPane.add(btnB1);
-		
-		JButton btnB2 = new JButton("B2");
-		btnB2.setBounds(117, 66, 89, 23);
-		contentPane.add(btnB2);
-		
-		JButton btnB3 = new JButton("B3");
-		btnB3.setBounds(117, 107, 89, 23);
-		contentPane.add(btnB3);
-		
-		JButton btnB4 = new JButton("B4");
-		btnB4.setBounds(117, 152, 89, 23);
-		contentPane.add(btnB4);
-		
-		JButton btnB = new JButton("B");
-		btnB.setBounds(117, 196, 89, 23);
-		contentPane.add(btnB);
-		
-		textFieldB = new JTextField();
-		textFieldB.setBounds(117, 197, 86, 20);
-		contentPane.add(textFieldB);
-		textFieldB.setColumns(10);
-		
-		JButton btnC1 = new JButton("C1");
-		btnC1.setBounds(229, 22, 89, 23);
-		contentPane.add(btnC1);
-		
-		JButton btnC2 = new JButton("C2");
-		btnC2.setBounds(229, 66, 89, 23);
-		contentPane.add(btnC2);
-		
-		JButton btnC3 = new JButton("C3");
-		btnC3.setBounds(229, 107, 89, 23);
-		contentPane.add(btnC3);
-		
-		JButton btnC4 = new JButton("C4");
-		btnC4.setBounds(229, 152, 89, 23);
-		contentPane.add(btnC4);
-		
-		JButton btnC = new JButton("C");
-		btnC.setBounds(229, 196, 89, 23);
-		contentPane.add(btnC);
-		
-		textFieldC = new JTextField();
-		textFieldC.setBounds(232, 197, 86, 20);
-		contentPane.add(textFieldC);
-		textFieldC.setColumns(10);
-		
-		JButton btnD1 = new JButton("D1");
-		btnD1.setBounds(328, 22, 89, 23);
-		contentPane.add(btnD1);
-		
-		JButton btnD2 = new JButton("D2");
-		btnD2.setBounds(328, 66, 89, 23);
-		contentPane.add(btnD2);
-		
-		JButton btnD3 = new JButton("D3");
-		btnD3.setBounds(328, 107, 89, 23);
-		contentPane.add(btnD3);
-		
-		JButton btnD4 = new JButton("D4");
-		btnD4.setBounds(328, 152, 89, 23);
-		contentPane.add(btnD4);
-		
-		JButton btnD = new JButton("D");
-		btnD.setBounds(328, 196, 89, 23);
-		contentPane.add(btnD);
-		
-		textFieldD = new JTextField();
-		textFieldD.setBounds(331, 197, 86, 20);
-		contentPane.add(textFieldD);
-		textFieldD.setColumns(10);
-		
-		JButton btnPotvrdi = new JButton("Potvrdi");
-		btnPotvrdi.setBounds(175, 230, 95, 32);
-		contentPane.add(btnPotvrdi);
-		
-		JButton btnKonacno = new JButton("???");
-		btnKonacno.setBounds(24, 274, 294, 32);
-		contentPane.add(btnKonacno);
-		
-		JButton btnVreme = new JButton("");
-		btnVreme.setBounds(347, 274, 70, 32);
-		contentPane.add(btnVreme);
-		
-		textFieldKonacno = new JTextField();
-		textFieldKonacno.setBounds(24, 286, 290, 20);
-		contentPane.add(textFieldKonacno);
-		textFieldKonacno.setColumns(10);
+		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
+		getContentPane().add(getBtnA1());
+		getContentPane().add(getBtnA2());
+		getContentPane().add(getBtnA3());
+		getContentPane().add(getBtnA4());
+		getContentPane().add(getBtnA());
+		getContentPane().add(getBtnB1());
+		getContentPane().add(getBtnB2());
+		getContentPane().add(getBtnB3());
+		getContentPane().add(getBtnB4());
+		getContentPane().add(getBtnB());
+		getContentPane().add(getBtnC1());
+		getContentPane().add(getBtnC2());
+		getContentPane().add(getBtnC3());
+		getContentPane().add(getBtnC4());
+		getContentPane().add(getBtnC());
+		getContentPane().add(getBtnD1());
+		getContentPane().add(getBtnD2());
+		getContentPane().add(getBtnD3());
+		getContentPane().add(getBtnD4());
+		getContentPane().add(getBtnD());
+		getContentPane().add(getTextFieldA());
+		getContentPane().add(getTextFieldB());
+		getContentPane().add(getTextFieldC());
+		getContentPane().add(getTextFieldD());
+		getContentPane().add(getBtnPotvrdi());
+		getContentPane().add(getBtnKonacno());
+		getContentPane().add(getBtnVreme());
+		getContentPane().add(getTextFieldKonacno());
+	}
+	private JButton getBtnA1() {
+		if (btnA1 == null) {
+			btnA1 = new JButton("A1");
+			btnA1.setBounds(10, 11, 89, 23);
+		}
+		return btnA1;
+	}
+	private JButton getBtnA2() {
+		if (btnA2 == null) {
+			btnA2 = new JButton("A2");
+			btnA2.setBounds(10, 45, 89, 23);
+		}
+		return btnA2;
+	}
+	private JButton getBtnA3() {
+		if (btnA3 == null) {
+			btnA3 = new JButton("A3");
+			btnA3.setBounds(10, 79, 89, 23);
+		}
+		return btnA3;
+	}
+	private JButton getBtnA4() {
+		if (btnA4 == null) {
+			btnA4 = new JButton("A4");
+			btnA4.setBounds(10, 113, 89, 23);
+		}
+		return btnA4;
+	}
+	private JButton getBtnA() {
+		if (btnA == null) {
+			btnA = new JButton("A");
+			btnA.setBounds(10, 147, 89, 23);
+		}
+		return btnA;
+	}
+	private JButton getBtnB1() {
+		if (btnB1 == null) {
+			btnB1 = new JButton("B1");
+			btnB1.setBounds(115, 11, 89, 23);
+		}
+		return btnB1;
+	}
+	private JButton getBtnB2() {
+		if (btnB2 == null) {
+			btnB2 = new JButton("B2");
+			btnB2.setBounds(115, 45, 89, 23);
+		}
+		return btnB2;
+	}
+	private JButton getBtnB3() {
+		if (btnB3 == null) {
+			btnB3 = new JButton("B3");
+			btnB3.setBounds(115, 79, 89, 23);
+		}
+		return btnB3;
+	}
+	private JButton getBtnB4() {
+		if (btnB4 == null) {
+			btnB4 = new JButton("B4");
+			btnB4.setBounds(115, 113, 89, 23);
+		}
+		return btnB4;
+	}
+	private JButton getBtnB() {
+		if (btnB == null) {
+			btnB = new JButton("B");
+			btnB.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				}
+			});
+			btnB.setBounds(115, 147, 89, 23);
+		}
+		return btnB;
+	}
+	private JButton getBtnC1() {
+		if (btnC1 == null) {
+			btnC1 = new JButton("C1");
+			btnC1.setBounds(214, 11, 89, 23);
+		}
+		return btnC1;
+	}
+	private JButton getBtnC2() {
+		if (btnC2 == null) {
+			btnC2 = new JButton("C2");
+			btnC2.setBounds(214, 45, 89, 23);
+		}
+		return btnC2;
+	}
+	private JButton getBtnC3() {
+		if (btnC3 == null) {
+			btnC3 = new JButton("C3");
+			btnC3.setBounds(214, 79, 89, 23);
+		}
+		return btnC3;
+	}
+	private JButton getBtnC4() {
+		if (btnC4 == null) {
+			btnC4 = new JButton("C4");
+			btnC4.setBounds(214, 113, 89, 23);
+		}
+		return btnC4;
+	}
+	private JButton getBtnC() {
+		if (btnC == null) {
+			btnC = new JButton("C");
+			btnC.setBounds(214, 147, 89, 23);
+		}
+		return btnC;
+	}
+	private JButton getBtnD1() {
+		if (btnD1 == null) {
+			btnD1 = new JButton("D1");
+			btnD1.setBounds(313, 11, 89, 23);
+		}
+		return btnD1;
+	}
+	private JButton getBtnD2() {
+		if (btnD2 == null) {
+			btnD2 = new JButton("D2");
+			btnD2.setBounds(313, 45, 89, 23);
+		}
+		return btnD2;
+	}
+	private JButton getBtnD3() {
+		if (btnD3 == null) {
+			btnD3 = new JButton("D3");
+			btnD3.setBounds(313, 79, 89, 23);
+		}
+		return btnD3;
+	}
+	private JButton getBtnD4() {
+		if (btnD4 == null) {
+			btnD4 = new JButton("D4");
+			btnD4.setBounds(313, 113, 89, 23);
+		}
+		return btnD4;
+	}
+	private JButton getBtnD() {
+		if (btnD == null) {
+			btnD = new JButton("D");
+			btnD.setBounds(313, 147, 89, 23);
+		}
+		return btnD;
+	}
+	private JTextField getTextFieldA() {
+		if (textFieldA == null) {
+			textFieldA = new JTextField();
+			textFieldA.setBounds(10, 148, 86, 20);
+			textFieldA.setColumns(10);
+		}
+		return textFieldA;
+	}
+	private JTextField getTextFieldB() {
+		if (textFieldB == null) {
+			textFieldB = new JTextField();
+			textFieldB.setBounds(118, 148, 86, 20);
+			textFieldB.setColumns(10);
+		}
+		return textFieldB;
+	}
+	private JTextField getTextFieldC() {
+		if (textFieldC == null) {
+			textFieldC = new JTextField();
+			textFieldC.setBounds(214, 148, 86, 20);
+			textFieldC.setColumns(10);
+		}
+		return textFieldC;
+	}
+	private JTextField getTextFieldD() {
+		if (textFieldD == null) {
+			textFieldD = new JTextField();
+			textFieldD.setBounds(316, 148, 86, 20);
+			textFieldD.setColumns(10);
+		}
+		return textFieldD;
+	}
+	private JButton getBtnPotvrdi() {
+		if (btnPotvrdi == null) {
+			btnPotvrdi = new JButton("Potvrdi");
+			btnPotvrdi.setBounds(169, 191, 89, 23);
+		}
+		return btnPotvrdi;
+	}
+	private JButton getBtnKonacno() {
+		if (btnKonacno == null) {
+			btnKonacno = new JButton("???");
+			btnKonacno.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			btnKonacno.setBounds(10, 228, 293, 23);
+		}
+		return btnKonacno;
+	}
+	private JButton getBtnVreme() {
+		if (btnVreme == null) {
+			btnVreme = new JButton("");
+			btnVreme.setBounds(329, 228, 73, 23);
+		}
+		return btnVreme;
+	}
+	private JTextField getTextFieldKonacno() {
+		if (textFieldKonacno == null) {
+			textFieldKonacno = new JTextField();
+			textFieldKonacno.setBounds(10, 229, 293, 20);
+			textFieldKonacno.setColumns(10);
+		}
+		return textFieldKonacno;
 	}
 }
