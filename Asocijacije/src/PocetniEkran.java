@@ -15,6 +15,7 @@ import java.awt.Dimension;
 public class PocetniEkran extends JFrame {
 	
 	private String pojmoviAsocijacije;
+	int ukupnoVreme = 5;
 	String[] nizKolona = new String[10];
 	String[] nizPolja1 = new String[10];
 	String[] nizPolja2 = new String[10];
@@ -107,6 +108,27 @@ public class PocetniEkran extends JFrame {
 		getContentPane().add(getBtnKonacno());
 		getContentPane().add(getBtnVreme());
 		getContentPane().add(getTextFieldKonacno());
+		
+		AsocijacijaResenje I = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5]);
+
+		ActionListener taskPerformer = new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				if (ukupnoVreme == 0) {
+					btnVreme.setVisible(false);
+					dispose();
+					I.setVisible(true);
+
+				}
+				if (ukupnoVreme > 0) {
+					btnVreme.setText(ukupnoVreme + "");
+					ukupnoVreme--;
+				}
+
+			}
+		};
+
+		javax.swing.Timer t = new javax.swing.Timer(1000, taskPerformer);
+		t.start();
 	}
 	
 	int kojiIzBazeAsocijacije = 0;
