@@ -15,7 +15,7 @@ import java.awt.Dimension;
 public class PocetniEkran extends JFrame {
 	
 	private String pojmoviAsocijacije;
-	int ukupnoVreme = 5;
+	int ukupnoVreme = 120;
 	String[] nizKolona = new String[10];
 	String[] nizPolja1 = new String[10];
 	String[] nizPolja2 = new String[10];
