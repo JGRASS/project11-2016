@@ -1,4 +1,5 @@
 package asocijacije;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -12,17 +13,28 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.awt.event.ActionEvent;
 import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class PocetniEkran extends JFrame {
-	
+
 	private String pojmoviAsocijacije;
-	int ukupnoVreme = 120;
+
 	String[] nizKolona = new String[10];
 	String[] nizPolja1 = new String[10];
 	String[] nizPolja2 = new String[10];
 	String[] nizPolja3 = new String[10];
 	String[] nizPolja4 = new String[10];
-	
+	int ukupnoVreme = 120;
+
 	private JButton btnA1;
 	private JButton btnA2;
 	private JButton btnA3;
@@ -72,8 +84,15 @@ public class PocetniEkran extends JFrame {
 	 * Create the frame.
 	 */
 	public PocetniEkran() {
-		setResizable(false);
-		setSize(new Dimension(425, 310));
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(PocetniEkran.class.getResource("/icons/unnamed.png")));
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				GUIKontroler.izadji();
+			}
+		});
+		setSize(new Dimension(425, 305));
 		setTitle("Asocijacije");
 		getContentPane().setLayout(null);
 		getContentPane().setLayout(null);
@@ -109,8 +128,10 @@ public class PocetniEkran extends JFrame {
 		getContentPane().add(getBtnKonacno());
 		getContentPane().add(getBtnVreme());
 		getContentPane().add(getTextFieldKonacno());
-		
-		AsocijacijaResenje I = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5],"Isteklo vam je vreme");
+		setJMenuBar(getMenuBar_1());
+
+		AsocijacijaResenje I = new AsocijacijaResenje(nizPolja1[4], nizPolja2[4], nizPolja3[4], nizPolja4[4],
+				nizPolja4[5], "Isteklo vam je vreme");
 
 		ActionListener taskPerformer = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
@@ -124,18 +145,23 @@ public class PocetniEkran extends JFrame {
 					btnVreme.setText(ukupnoVreme + "");
 					ukupnoVreme--;
 				}
-
 			}
 		};
 
 		javax.swing.Timer t = new javax.swing.Timer(1000, taskPerformer);
 		t.start();
 	}
-	
+
 	int kojiIzBazeAsocijacije = 0;
 	String[] celaAsocijacijaNiz = new String[40];
 
 	String S = "";
+	private JMenuBar menuBar;
+	private JMenu mnMeni;
+	private JMenuItem mntmNovaIgra;
+	private JMenuItem mntmIzadji;
+	private JMenuItem mntmONama;
+	private JMenuItem mntmTrenutniIgrac;
 
 	{
 
@@ -162,9 +188,8 @@ public class PocetniEkran extends JFrame {
 		nizPolja2 = nizKolona[1].split("#");
 		nizPolja3 = nizKolona[2].split("#");
 		nizPolja4 = nizKolona[3].split("#");
-
 	}
-	
+
 	private JButton getBtnA1() {
 		if (btnA1 == null) {
 			btnA1 = new JButton("A1");
@@ -181,6 +206,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnA1;
 	}
+
 	private JButton getBtnA2() {
 		if (btnA2 == null) {
 			btnA2 = new JButton("A2");
@@ -197,6 +223,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnA2;
 	}
+
 	private JButton getBtnA3() {
 		if (btnA3 == null) {
 			btnA3 = new JButton("A3");
@@ -213,6 +240,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnA3;
 	}
+
 	private JButton getBtnA4() {
 		if (btnA4 == null) {
 			btnA4 = new JButton("A4");
@@ -229,6 +257,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnA4;
 	}
+
 	private JButton getBtnA() {
 		if (btnA == null) {
 			btnA = new JButton("A");
@@ -236,6 +265,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnA;
 	}
+
 	private JButton getBtnB1() {
 		if (btnB1 == null) {
 			btnB1 = new JButton("B1");
@@ -252,6 +282,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnB1;
 	}
+
 	private JButton getBtnB2() {
 		if (btnB2 == null) {
 			btnB2 = new JButton("B2");
@@ -268,6 +299,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnB2;
 	}
+
 	private JButton getBtnB3() {
 		if (btnB3 == null) {
 			btnB3 = new JButton("B3");
@@ -284,6 +316,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnB3;
 	}
+
 	private JButton getBtnB4() {
 		if (btnB4 == null) {
 			btnB4 = new JButton("B4");
@@ -300,6 +333,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnB4;
 	}
+
 	private JButton getBtnB() {
 		if (btnB == null) {
 			btnB = new JButton("B");
@@ -311,6 +345,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnB;
 	}
+
 	private JButton getBtnC1() {
 		if (btnC1 == null) {
 			btnC1 = new JButton("C1");
@@ -327,6 +362,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnC1;
 	}
+
 	private JButton getBtnC2() {
 		if (btnC2 == null) {
 			btnC2 = new JButton("C2");
@@ -343,6 +379,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnC2;
 	}
+
 	private JButton getBtnC3() {
 		if (btnC3 == null) {
 			btnC3 = new JButton("C3");
@@ -359,6 +396,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnC3;
 	}
+
 	private JButton getBtnC4() {
 		if (btnC4 == null) {
 			btnC4 = new JButton("C4");
@@ -375,6 +413,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnC4;
 	}
+
 	private JButton getBtnC() {
 		if (btnC == null) {
 			btnC = new JButton("C");
@@ -382,6 +421,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnC;
 	}
+
 	private JButton getBtnD1() {
 		if (btnD1 == null) {
 			btnD1 = new JButton("D1");
@@ -398,6 +438,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnD1;
 	}
+
 	private JButton getBtnD2() {
 		if (btnD2 == null) {
 			btnD2 = new JButton("D2");
@@ -414,6 +455,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnD2;
 	}
+
 	private JButton getBtnD3() {
 		if (btnD3 == null) {
 			btnD3 = new JButton("D3");
@@ -430,6 +472,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnD3;
 	}
+
 	private JButton getBtnD4() {
 		if (btnD4 == null) {
 			btnD4 = new JButton("D4");
@@ -446,6 +489,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnD4;
 	}
+
 	private JButton getBtnD() {
 		if (btnD == null) {
 			btnD = new JButton("D");
@@ -453,15 +497,17 @@ public class PocetniEkran extends JFrame {
 		}
 		return btnD;
 	}
+
 	private JTextField getTextFieldA() {
 		if (textFieldA == null) {
 			textFieldA = new JTextField();
 			textFieldA.setVisible(false);
-			textFieldA.setBounds(10, 148, 86, 20);
+			textFieldA.setBounds(13, 148, 86, 20);
 			textFieldA.setColumns(10);
 		}
 		return textFieldA;
 	}
+
 	private JTextField getTextFieldB() {
 		if (textFieldB == null) {
 			textFieldB = new JTextField();
@@ -471,6 +517,7 @@ public class PocetniEkran extends JFrame {
 		}
 		return textFieldB;
 	}
+
 	private JTextField getTextFieldC() {
 		if (textFieldC == null) {
 			textFieldC = new JTextField();
@@ -480,15 +527,17 @@ public class PocetniEkran extends JFrame {
 		}
 		return textFieldC;
 	}
+
 	private JTextField getTextFieldD() {
 		if (textFieldD == null) {
 			textFieldD = new JTextField();
 			textFieldD.setVisible(false);
-			textFieldD.setBounds(316, 148, 86, 20);
+			textFieldD.setBounds(313, 148, 86, 20);
 			textFieldD.setColumns(10);
 		}
 		return textFieldD;
 	}
+
 	private JButton getBtnPotvrdi() {
 		if (btnPotvrdi == null) {
 			btnPotvrdi = new JButton("Potvrdi");
@@ -528,7 +577,8 @@ public class PocetniEkran extends JFrame {
 						btnD3.setText(nizPolja4[2]);
 						btnD.setVisible(true);
 						btnD4.setText(nizPolja4[3]);
-						AsocijacijaResenje a = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5], "Pogodili ste konacno resenje");
+						AsocijacijaResenje a = new AsocijacijaResenje(nizPolja1[4], nizPolja2[4], nizPolja3[4],
+								nizPolja4[4], nizPolja4[5], "Pogodili ste konacno resenje");
 						a.setVisible(true);
 						dispose();
 					} else
@@ -574,10 +624,11 @@ public class PocetniEkran extends JFrame {
 						textFieldD.setText("");
 				}
 			});
-			btnPotvrdi.setBounds(169, 191, 89, 23);
+			btnPotvrdi.setBounds(169, 183, 89, 23);
 		}
 		return btnPotvrdi;
 	}
+
 	private JButton getBtnKonacno() {
 		if (btnKonacno == null) {
 			btnKonacno = new JButton("???");
@@ -585,26 +636,91 @@ public class PocetniEkran extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 				}
 			});
-			btnKonacno.setBounds(10, 228, 293, 23);
+			btnKonacno.setBounds(10, 217, 293, 23);
 		}
 		return btnKonacno;
 	}
+
 	private JButton getBtnVreme() {
 		if (btnVreme == null) {
 			btnVreme = new JButton("");
-			btnVreme.setBounds(329, 228, 73, 23);
+			btnVreme.setBounds(326, 217, 73, 23);
 		}
 		return btnVreme;
 	}
+
 	private JTextField getTextFieldKonacno() {
 		if (textFieldKonacno == null) {
 			textFieldKonacno = new JTextField();
 			textFieldKonacno.setVisible(false);
-			textFieldKonacno.setBounds(10, 229, 293, 20);
+			textFieldKonacno.setBounds(10, 218, 293, 20);
 			textFieldKonacno.setColumns(10);
 		}
 		return textFieldKonacno;
 	}
-	
-	
+	private JMenuBar getMenuBar_1() {
+		if (menuBar == null) {
+			menuBar = new JMenuBar();
+			menuBar.add(getMnMeni());
+		}
+		return menuBar;
+	}
+	private JMenu getMnMeni() {
+		if (mnMeni == null) {
+			mnMeni = new JMenu("Meni");
+			mnMeni.add(getMntmNovaIgra());
+			mnMeni.add(getMntmIzadji());
+			mnMeni.add(getMntmONama());
+			mnMeni.add(getMntmTrenutniIgrac());
+		}
+		return mnMeni;
+	}
+	private JMenuItem getMntmNovaIgra() {
+		if (mntmNovaIgra == null) {
+			mntmNovaIgra = new JMenuItem("Nova igra");
+			mntmNovaIgra.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					GUIKontroler.zapocniNovuIgru();
+				}
+			});
+			mntmNovaIgra.setIcon(new ImageIcon(PocetniEkran.class.getResource("/com/sun/java/swing/plaf/windows/icons/Computer.gif")));
+			mntmNovaIgra.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
+		}
+		return mntmNovaIgra;
+	}
+	private JMenuItem getMntmIzadji() {
+		if (mntmIzadji == null) {
+			mntmIzadji = new JMenuItem("Izadji");
+			mntmIzadji.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.izadji();
+				}
+			});
+			mntmIzadji.setIcon(new ImageIcon(PocetniEkran.class.getResource("/javax/swing/plaf/metal/icons/ocean/close.gif")));
+			mntmIzadji.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.ALT_MASK));
+		}
+		return mntmIzadji;
+	}
+	private JMenuItem getMntmONama() {
+		if (mntmONama == null) {
+			mntmONama = new JMenuItem("O nama");
+			mntmONama.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.podaciOAutorima();
+				}
+			});
+		}
+		return mntmONama;
+	}
+	private JMenuItem getMntmTrenutniIgrac() {
+		if (mntmTrenutniIgrac == null) {
+			mntmTrenutniIgrac = new JMenuItem("Trenutni igrac");
+			mntmTrenutniIgrac.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.trenutniIgrac();
+				}
+			});
+		}
+		return mntmTrenutniIgrac;
+	}
 }

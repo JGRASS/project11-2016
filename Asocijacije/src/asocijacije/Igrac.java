@@ -72,7 +72,7 @@ public class Igrac extends JFrame {
 		}
 		return lblPrezime;
 	}
-	private JTextField getTextFieldIme() {
+	public JTextField getTextFieldIme() {
 		if (textFieldIme == null) {
 			textFieldIme = new JTextField();
 			textFieldIme.setBounds(99, 34, 101, 20);
@@ -80,7 +80,7 @@ public class Igrac extends JFrame {
 		}
 		return textFieldIme;
 	}
-	private JTextField getTextFieldPrezime() {
+	public JTextField getTextFieldPrezime() {
 		if (textFieldPrezime == null) {
 			textFieldPrezime = new JTextField();
 			textFieldPrezime.setBounds(99, 80, 101, 20);
@@ -106,15 +106,11 @@ public class Igrac extends JFrame {
 						out.writeObject(o);
 						out.close();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
-					}
-					
-					
-					System.out.println("Kraj");
-					
+					}				
 					PocetniEkran p = new PocetniEkran();
 					p.setVisible(true);
+					dispose();
 				}
 			});
 			btnZapocniIgru.setBounds(42, 128, 109, 23);
