@@ -1,3 +1,4 @@
+package asocijacije;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -109,7 +110,7 @@ public class PocetniEkran extends JFrame {
 		getContentPane().add(getBtnVreme());
 		getContentPane().add(getTextFieldKonacno());
 		
-		AsocijacijaResenje I = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5]);
+		AsocijacijaResenje I = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5],"Isteklo vam je vreme");
 
 		ActionListener taskPerformer = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
@@ -527,7 +528,9 @@ public class PocetniEkran extends JFrame {
 						btnD3.setText(nizPolja4[2]);
 						btnD.setVisible(true);
 						btnD4.setText(nizPolja4[3]);
-
+						AsocijacijaResenje a = new AsocijacijaResenje(nizPolja1[4],nizPolja2[4],nizPolja3[4],nizPolja4[4],nizPolja4[5], "Pogodili ste konacno resenje");
+						a.setVisible(true);
+						dispose();
 					} else
 						textFieldKonacno.setText("");
 

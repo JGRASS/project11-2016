@@ -1,3 +1,4 @@
+package asocijacije;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -70,7 +71,7 @@ public class AsocijacijaResenje extends JFrame {
 	}
 	
 
-	public AsocijacijaResenje(String string, String string2, String string3, String string4, String string5) {
+	public AsocijacijaResenje(String string, String string2, String string3, String string4, String string5,String string6) {
 		setTitle("Asocijacija Resenje");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 416, 326);
@@ -99,11 +100,13 @@ public class AsocijacijaResenje extends JFrame {
 		btnC.setText(C);
 		btnD.setText(D);
 		btnK.setText(konacno);
+		btnKraj.setText(string6);
+		
 	}
 	
 	private JButton getBtnKraj() {
 		if (btnKraj == null) {
-			btnKraj = new JButton("Isteklo Vam je vreme!");
+			btnKraj = new JButton("");
 			btnKraj.setBounds(10, 11, 315, 31);
 		}
 		return btnKraj;
