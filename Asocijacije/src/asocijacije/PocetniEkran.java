@@ -1,8 +1,6 @@
 package asocijacije;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -717,7 +715,7 @@ public class PocetniEkran extends JFrame {
 			mntmTrenutniIgrac = new JMenuItem("Trenutni igrac");
 			mntmTrenutniIgrac.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					GUIKontroler.trenutniIgrac();
+					GUIKontroler.trenutniIgrac("N","N");
 				}
 			});
 		}
