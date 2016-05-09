@@ -21,9 +21,11 @@ public class SOPodaciOAutorima {
 	 * Metoda koja ispisuje podatke o autorima
 	 */
 	public static void izvrsi() {
-		pocetniEkran = new PocetniEkran();
+		
+	pocetniEkran = new PocetniEkran(); 
+		
 		JOptionPane.showMessageDialog(pocetniEkran.getContentPane(), "Autori:" + System.lineSeparator()+ "Mirjana Stanojevic 99/14" +System.lineSeparator() +
-				"Dragana Tanic 15/14" + System.lineSeparator()+ "Stefana Bogdanovic 66/14", "Podaci o autoru",
+				"Dragana Tanic 15/14" + System.lineSeparator()+ "Stefana Bogdanovic 66/14", "Podaci o autorima",
 				JOptionPane.PLAIN_MESSAGE);
 	}
 }

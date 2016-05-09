@@ -23,7 +23,7 @@ public class SOIzadji {
 	public static void izvrsi() {
 		
 		int izbor = JOptionPane.showConfirmDialog(pocetniEkran.getContentPane(),
-				"Da li zelite da izadjete iz programa?", "Exit", JOptionPane.YES_NO_CANCEL_OPTION,
+				"Da li zelite da izadjete iz igre?", "Exit", JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE);
 		if (izbor == JOptionPane.YES_OPTION) {
 			System.exit(0);

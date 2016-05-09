@@ -7,7 +7,7 @@ import asocijacije.sistemskeoperacije.SOTrenutniIgrac;
 import asocijacije.sistemskeoperacije.SOZapocniNovuIgru;
 
 /**
- * Klasa koja je posrednik izmedju GUI-a i domenskih klasa
+ * Klasa koja je posrednik izmedju GUI-a i ostalih klasa projekta
  * 
  * @author Stefana Bogdanovic, Mira Stanojevic, Dragana Tanic
  *

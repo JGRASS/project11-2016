@@ -36,8 +36,8 @@ public class Osoba implements Serializable{
 	 * 				ako je uneto ime prazan String
 	 */
 	public void setIme(String ime) {
-		if (ime.isEmpty()) {
-			throw new RuntimeException("Ime ne sme biti prazan string!");
+		if (ime.isEmpty() || ime == null) {
+			throw new RuntimeException("Ime ne sme biti prazan String ili null!");
 		}
 		this.ime = ime;
 	}
@@ -60,8 +60,8 @@ public class Osoba implements Serializable{
 	 * 					ako je uneto prezime prazan String
 	 */
 	public void setPrezime(String prezime) {
-		if (prezime.isEmpty()) {
-			throw new RuntimeException("Prezime ne sme biti prazan string!");
+		if (prezime.isEmpty() || prezime == null) {
+			throw new RuntimeException("Prezime ne sme biti prazan String ili null!");
 		}
 		this.prezime = prezime;
 	}
