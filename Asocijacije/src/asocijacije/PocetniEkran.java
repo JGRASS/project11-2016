@@ -21,7 +21,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
-
+/**
+ * Prozor koji omogucava korisniku da zapocne igru
+ * 
+ * @author Stefana Bogdanovic, Mirjana Stanojevic, Dragana Tanic
+ *
+ */
 public class PocetniEkran extends JFrame {
 
 	private String pojmoviAsocijacije;

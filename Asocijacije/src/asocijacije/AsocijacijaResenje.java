@@ -9,6 +9,12 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Prozor koji prikazuje resenje asocijacije
+ * 
+ * @author Stefana Bogdanovic, Mirjana Stanojevic, Dragana Tanic
+ *
+ */
 public class AsocijacijaResenje extends JFrame {
 	private String A = "";
 	private String B = "";

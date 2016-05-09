@@ -15,6 +15,12 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.awt.event.ActionEvent;
 
+/**
+ * Prozor koji omogucava igracu da unese svoje podatke
+ * 
+ * @author Stefana Bogdanovic, Mirjana Stanojevic, Dragana Tanic
+ *
+ */
 public class Igrac extends JFrame {
 
 	private JPanel contentPane;

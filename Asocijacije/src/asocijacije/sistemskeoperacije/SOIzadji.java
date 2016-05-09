@@ -4,10 +4,22 @@ import javax.swing.JOptionPane;
 
 import asocijacije.PocetniEkran;
 
+/**
+ * Klasa koja predstavlja sistemsku operaciju izlaska iz aplikacije
+ * 
+ * @author Stefana Bogdanovic, Mirjana Stanojevic, Dragana Tanic
+ *
+ */
 public class SOIzadji {
 
+	/**
+	 * Atribut koji predstavlja objekat klase PocetniEkran
+	 */
 	private static PocetniEkran pocetniEkran = new PocetniEkran();
 	
+	/**
+	 * Metoda koja omogucava izlazak iz aplikacije
+	 */
 	public static void izvrsi() {
 		
 		int izbor = JOptionPane.showConfirmDialog(pocetniEkran.getContentPane(),
